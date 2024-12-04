@@ -31,6 +31,8 @@ In WSL, run `lsusb` to verify that your device got passed through. You should al
 ## Flashing Micropython:
 I've already included a micropython image on this repo, in the root dir. You can program it to your device with:
 
+(First, activate Poetry using `poetry shell`)
+
 `esptool.py --chip esp32c6 --port /dev/ttyACM0 erase_flash`
 `esptool.py --chip esp32c6 --port /dev/ttyACM0 --baud 460800 write_flash -z 0x0 esp32c6-20241025-v1.24.0.bin`
 
